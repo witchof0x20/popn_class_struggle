@@ -1,0 +1,29 @@
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <title>Pop'n Class War</title>
+  <meta name="description" content="Pop'n Class Helper">
+  <meta name="author" content="Jade">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <label for="popn_class">Input your Pop'n class:</label>
+  <input id="popn_class" type="number" step="0.01" min="0" max="150" required=""><br>
+  <br>
+  <p>Your current pop'n class can be reached with the below scores. If you want to raise your pop'n class, earn higher scores<p>
+  <p>The score in the clear column applies to both clears and easy clears, and the score in the FC column applies to full combos or perfects.<p>
+  <p>Scores shown in grey are unachievable, and levels shown in grey will not increase your pop'n class at all.</p>
+  <table id="scores" border="1">
+    <tbody><tr>
+      <th>Song Level</th>
+      <th class="fail">Fail score</th>
+      <th class="clear">Clear score</th>
+      <th class="fullclear">FC score</th>
+    </tr>
+  </table>
+  <!-- Start the main page script -->
+  <script src="js/main.js"></script>
+  <p>Based on the formulas from <a href="http://bemaniwiki.com/index.php?pop%27n%20music%20peace/%A5%DD%A5%C3%A5%D7%A5%F3%A5%AF%A5%E9%A5%B9">BemaniWiki</a></p>
+  <a href="about_js.html" data-jslicense="1">JavaScript license information</a>
+</body>
+</html>
