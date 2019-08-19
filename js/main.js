@@ -52,7 +52,7 @@ function initialize_score_table(table, levels) {
 /// popn_class: the target pop'n class
 /// level: the level of the the song
 function calculate_fail_score_for_class(popn_class, level) {
-    return (5440 * popn_class) - (10000 * level) + 50000;
+    return (5440 * popn_class) - (10000 * level) + POPN_CLASS_MINSCORE;
 }
 
 /// Updates a cell given a score, and the CSS class that should be
@@ -64,7 +64,7 @@ function calculate_fail_score_for_class(popn_class, level) {
 function update_score_cell(cell, score, default_style) {
     // Clamp the score and store it to the cell
     // This is because only certain scores will affect pop'n class
-    cell.textContent = Math.ceil(Math.max(score, 50000));
+    cell.textContent = Math.ceil(Math.max(score, POPN_CLASS_MINSCORE));
     // Check if the score is impossible
     let impossible = score > POPN_MAXSCORE;
     if(impossible) {
