@@ -111,12 +111,63 @@ function update_score_table(table, popn_class) {
     }
 }
 
+/// Updates the tier label
+/// span: tier label span
+/// popn_class: pop'n class
+function update_tier_label(span, popn_class) {
+    let tier_name = "";
+    let tier_class = "";
+    // Decide tier name and css class based on pop'n class
+    if(popn_class >= 0 && popn_class <= 20.99) {
+        tier_name = "にゃんこ";
+        tier_class = "classtier1";
+    }
+    else if(popn_class <= 33.99) {
+        tier_name = "小学生";
+        tier_class = "classtier2";
+    }
+    else if(popn_class <= 45.99) {
+        tier_name = "番長";
+        tier_class = "classtier3";
+    }
+    else if(popn_class <= 58.99) {
+        tier_name = "刑事";
+        tier_class = "classtier4";
+    }
+    else if(popn_class <= 67.99) {
+        tier_name = "アイドル";
+        tier_class = "classtier5";
+    }
+    else if(popn_class <= 78.99) {
+        tier_name = "将軍";
+        tier_class = "classtier6";
+    }
+    else if(popn_class <= 90.99) {
+        tier_name = "仙人";
+        tier_class = "classtier7";
+    }
+    else if(popn_class >= 91.00) {
+        tier_name = "神";
+        tier_class = "classtier8";
+    }
+    else {
+        throw new Error("Invalid pop'n class");
+    }
+    span.textContent = tier_name;
+    span.className = tier_class;
+}
+
 /// Run at start
 function main() {
     // Get the pop'n class input box
     let input_popn_class = document.getElementById("popn_class");
     if(input_popn_class == null) {
       throw new Error("Failed to find pop'n class input");
+    }
+    // Get the pop'n class tier span
+    let span_class_tier = document.getElementById("class_tier");
+    if(span_class_tier == null) {
+      throw new Error("Failed to find class tier span");
     }
     //Get the table
     let table_scores = document.getElementById("scores");
@@ -133,6 +184,7 @@ function main() {
     // Add a function to the pop'n class input that updates the table on change
     input_popn_class.oninput = function() {
         if(input_popn_class.checkValidity()) {
+            update_tier_label(span_class_tier, input_popn_class.valueAsNumber);
             update_score_table(table_scores, input_popn_class.valueAsNumber);
         }
     };

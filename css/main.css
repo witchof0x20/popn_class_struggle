@@ -13,3 +13,35 @@ th.fullclear, td.fullclear {
 th.impossible, td.impossible {
   background-color: #4C4C4C;
 }
+
+span.classtier1 {
+    background-color: #CEA782;
+}
+
+span.classtier2 {
+    background-color: lightgreen;
+}
+
+span.classtier3 {
+    background-color: #9BD38F;
+}
+
+span.classtier4 {
+    background-color: plum;
+}
+
+span.classtier5 {
+    background-color: pink;
+}
+
+span.classtier6 {
+    background-color: #EFEFA0;
+}
+
+span.classtier7 {
+    background-color: aquamarine;
+}
+
+span.classtier8 {
+    background-color: #FFD700;
+}
